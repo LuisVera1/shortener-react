@@ -1,0 +1,11 @@
+
+h2 {
+  font-weight: bold;
+  text-align: right;
+  vertical-align: middle;
+  margin: 0px 25px 0px 0px;
+}
+
+td {
+  vertical-align: middle;
+}

@@ -1,0 +1,30 @@
+main {
+	margin-top: 66px;
+	background-color: purple;
+}
+
+.main__imageSection__size {
+	height: calc(100vh - 66px);
+}
+
+h1 {
+	font-weight: bold;
+	text-align: center;
+	margin: 35px 0px;
+}
+
+h1 > span {
+	color: #007cff;
+}
+
+.main__image__contain {
+	height: 600px;
+	width: 600px;
+	overflow: hidden;
+}
+
+.main__image__cover {
+	object-fit: cover;
+	height: 600px;
+	width: 600px;
+}
