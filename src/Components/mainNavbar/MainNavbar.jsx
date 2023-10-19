@@ -43,7 +43,7 @@ export const MainNavbar = ({ lang = 'en' }) => {
 				<Navbar.Toggle aria-controls="basic-navbar-nav" />
 				<Navbar.Collapse id="basic-navbar-nav">
 					<Nav className="me-auto">
-						<Nav.Link href="#generateLink">{translations[lang].create}</Nav.Link>
+						<Nav.Link href="#generate-link">{translations[lang].create}</Nav.Link>
 						<Nav.Link href="#features">{translations[lang].features}</Nav.Link>
 						<Nav.Link href="#plans">{translations[lang].plans}</Nav.Link>
 					</Nav>
@@ -55,7 +55,7 @@ export const MainNavbar = ({ lang = 'en' }) => {
 						<NavDropdown.Divider />
 						<NavDropdown.Item href="#">{translations[lang].logout}</NavDropdown.Item>
 					</NavDropdown> */}
-						<NavDropdown title="Languaje" id="basic-nav-dropdown" className="me-3">
+						<NavDropdown title="ES / EN" id="basic-nav-dropdown" className="me-3">
 							<NavDropdown.Item onClick={() => console.log('English')}>English</NavDropdown.Item>
 							<NavDropdown.Item onClick={() => console.log('Español')}>Español</NavDropdown.Item>
 						</NavDropdown>

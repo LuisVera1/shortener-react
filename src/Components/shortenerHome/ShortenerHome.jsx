@@ -1,3 +1,5 @@
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 import './styles.css';
 
 const translations = {
@@ -15,26 +17,30 @@ const translations = {
 	},
 };
 
-export const ShortenerHome = ({ lang }) => {
+export const ShortenerHome = ({ lang = 'en' }) => {
 	const handleGenerateLink = () => {
 		console.log('generate link');
 	};
 
 	return (
-		<div className="d-flex flex-column align-items-center generatorSection">
-			<h2>{translations[lang].invitation}</h2>
-			<input
-				id="inpLink"
-				onChange={(e) => setTextLink(e.target.value)}
-				placeholder={translations[lang].placeholder}
-			></input>
-			<button onClick={() => handleGenerateLink()} id="btnGenerate">
-				{translations[lang].btnText}
-			</button>
-			<p className="mt-1 mb-2" id="textConditions">
-				{translations[lang].txtConditions}
-			</p>
-			{/* {boxCreatedLink()} */}
-		</div>
+		<Row>
+			<Col id="generate-link">
+				<div className="d-flex flex-column align-items-center generatorSection">
+					<h2>{translations[lang].invitation}</h2>
+					<input
+						id="inpLink"
+						onChange={(e) => setTextLink(e.target.value)}
+						placeholder={translations[lang].placeholder}
+					></input>
+					<button onClick={() => handleGenerateLink()} id="btnGenerate">
+						{translations[lang].btnText}
+					</button>
+					<p className="mt-1 mb-2" id="textConditions">
+						{translations[lang].txtConditions}
+					</p>
+					{/* {boxCreatedLink()} */}
+				</div>
+			</Col>
+		</Row>
 	);
 };

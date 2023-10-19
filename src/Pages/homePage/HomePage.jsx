@@ -1,81 +1,55 @@
 import Container from 'react-bootstrap/Container';
-import { MainNavbar, ShortenerHome } from '../../Components';
-import Image from 'react-bootstrap/Image';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+import {
+	MainNavbar,
+	LandingSection,
+	ShortenerHome,
+	Characteristics,
+	Plans,
+	OurUsers,
+	Footer,
+} from '../../Components';
 
 import './styles.css';
 
-const translations = {
-	en: {
-		text: 'Easily create a short URL, generate QR codes, and share',
-	},
-	es: {
-		text: 'Crea <span>URL</span> acortadas facilmente, genera códigos QR y comparte',
-	},
-};
-
 const lang = 'es';
+
+/*
+<a href="https://www.freepik.es/vector-gratis/ilustracion-concepto-mensajeria_7070650.htm#query=send%20text&position=5&from_view=search&track=ais">Imagen de storyset</a> en Freepik
+<a href="https://www.freepik.es/vector-gratis/ilustracion-fondo-azul-conexion-todo-mundo_3525476.htm#query=world%20web&position=44&from_view=search&track=ais">Imagen de rawpixel.com</a> en Freepik
+
+*/
 
 export const HomePage = () => {
 	return (
 		<>
-			<MainNavbar lang={lang}/>
+			<MainNavbar lang={lang} />
 
 			<Container className="g-0" fluid>
 				<Container className="g-0">
+					{/* -- main */}
 					<main>
-						<Row className="main__imageSection__size">
-							<Col className="main-image d-flex align-items-center justify-content-center">
-								{lang === 'es' && (
-									<h1
-										dangerouslySetInnerHTML={{
-											__html:
-												'Crea <span>URL</span> acortadas fácilmente, genera códigos <span>QR</span>, y comparte',
-										}}
-									/>
-								)}
+						<LandingSection lang={lang} />
 
-								{lang === 'en' && (
-									<h1
-										dangerouslySetInnerHTML={{
-											__html:
-												'Easily create a short <span>URL</span>, generate <span>QR</span> codes, and share',
-										}}
-									/>
-								)}
-							</Col>
-
-							<Col className="d-flex justify-content-center align-items-center">
-								<div className="main__image__contain">
-									<Image className="main__image__cover" src="/main-image.jpg" />
-								</div>
-							</Col>
-						</Row>
-
-						<Row>
-							<Col id="generateLink">
-								<ShortenerHome lang={lang} />
-							</Col>
-						</Row>
+						<ShortenerHome lang={lang} />
 					</main>
 
-					<section>
-						<p>info (usage data)</p>
+					<section id="features">
+						<Characteristics lang={lang} />
+					</section>
 
-						<p>caracteristics</p>
+					<section id="plans">
+						<Plans lang={lang} />
 					</section>
 
 					<section>
-						<p>plans</p>
-					</section>
-
-					<section>
-						<p>users says...</p>
+						<OurUsers lang={lang} />
 					</section>
 				</Container>
-				<footer className="g-0">footer</footer>
 			</Container>
+
+			<footer>
+				<Footer lang={lang} />
+			</footer>
 		</>
 	);
 };
