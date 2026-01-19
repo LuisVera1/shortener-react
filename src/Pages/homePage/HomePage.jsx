@@ -1,3 +1,4 @@
+import { useDispatch, useSelector } from 'react-redux';
 import Container from 'react-bootstrap/Container';
 import {
 	MainNavbar,
@@ -20,6 +21,10 @@ const lang = 'es';
 */
 
 export const HomePage = () => {
+	const data  = useSelector((state) => state.user);
+	console.log("🚀 - file: HomePage.jsx:25 - data:", data)
+
+
 	return (
 		<>
 			<MainNavbar lang={lang} />
